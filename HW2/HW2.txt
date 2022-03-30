@@ -1,0 +1,51 @@
+ghb = 0
+gbt[all] = 2
+
+while not end of file {
+	read in address and outcome from file
+	
+	ghb << M - N
+	pc = address >> 2
+	index = ghb ^ address
+	
+	if T prediction {
+		if T outcome {
+			correct prediction ++
+			if gbt[index] < 3
+				gbt[index] ++
+				
+			ghb >> 1	
+			ghb |= BITN
+		}	
+		
+		else {
+			wrong prediction ++
+			if gbt[index] > 0
+				gbt[index] --
+				
+			ghb >> 1
+			ghb &= ~BITN
+		}
+	}
+	
+	else {
+		if N outcome {
+			correct prediction ++
+			if gbt[index] > 0
+				gbt[index] --
+			
+			ghb >> 1
+			ghb |= BITN
+		}
+			
+		else {
+			wrong prediction ++
+			if gbt[index] < 3
+				gbt[index] ++
+			
+			ghb >> 1
+			ghb &= ~BITN
+		}
+	}
+}
+	
